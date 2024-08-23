@@ -1,35 +1,35 @@
-# Classification task, Group 25
+# Classification of Post
 
-The following python files are available in the folder.
+This repository contains scripts and notebooks for classifying posts using various machine learning models. The files are organized into sections based on their purpose, including data preparation, baseline models, and enhanced models.
 
-I. Data preparation files:
-0-label-llm.py : file use to label training data using Chain-of-Thought
-0-data-exploreation.ipynb : used for data exploration purpose.
+## I. Data Preparation Files
+- **`0-label-llm.py`**: Labels training data using Chain-of-Thought.
+- **`0-data-exploration.ipynb`**: Used for data exploration purposes.
 
-II. Normal baseline models.
-1-Vader.py : used to run vader benchmark
-1-LSTM.py : used to run LSTM benchmark
-1-Bert.py : used to run Bert benchmark
-1-Roberta.py: used to run RoBERTa benchmark
-1-Distilbert.py: used to run DistilBERT benchmark
+## II. Baseline Models
+- **`1-Vader.py`**: Runs the VADER sentiment analysis benchmark.
+- **`1-LSTM.py`**: Runs the LSTM benchmark.
+- **`1-Bert.py`**: Runs the BERT benchmark.
+- **`1-Roberta.py`**: Runs the RoBERTa benchmark.
+- **`1-Distilbert.py`**: Runs the DistilBERT benchmark.
 
-Step to preproduce result.
-1. Go in the notebook, change the file path of train dataset and test dataset. The train dataset and test dataset are also submitted in data zip file.
-2. For Bert, Roberta, DistilBERT, change the number of fold and the path of model to the folder you want to save the model to.
-3. Run file by: python <filename>
+### Steps to Reproduce Results
+1. Open the relevant notebook and update the file paths for the training and testing datasets. The datasets are included in the provided data ZIP file.
+2. For BERT, RoBERTa, and DistilBERT, modify the number of folds and the model save path as needed.
+3. Run the scripts using the command: `python <filename>`.
 
-III. Enhancement models
-2-ensemble-1.py : used for ensemble learning in 3 models.
-2-metadata-extraction.py : used to extract data for multimodal learning. This file need to run first before multimodal-learning.py. However, we also publish the data in data folder, start with INNOVATION*, indicate our dataset with extracted metadata, and can be used straightly in multimodal-transformers.py.
-2-multimodal-learning.py : notebook used to train multimodal transformers for text and tabular data.
-2-ensemble-2.py : notebook used to combine 4 models (BERT, RoBERTa, DistilBERT, multimodal model)
+## III. Enhancement Models
+- **`2-ensemble-1.py`**: Implements ensemble learning across three models.
+- **`2-metadata-extraction.py`**: Extracts data for multimodal learning. This script must be run before `2-multimodal-learning.py`. Pre-extracted metadata is also provided in the data folder (files starting with `INNOVATION*`), and these can be directly used in `2-multimodal-transformers.py`.
+- **`2-multimodal-learning.py`**: Notebook for training multimodal transformers on text and tabular data.
+- **`2-ensemble-2.py`**: Combines four models (BERT, RoBERTa, DistilBERT, and the multimodal model) using ensemble learning.
 
-Enhancement 1: Ensemble learning:
-Go in 2-ensemble-1.py, change the data paths for training, testing, and features. We upload all data in data zip folder. For features, we note the file with FEATURES* start.
+### Enhancement 1: Ensemble Learning
+1. Open `2-ensemble-1.py` and update the paths for training data, testing data, and feature files. All necessary data is included in the provided data ZIP file. Feature files are marked with `FEATURES*`.
 
-Enhancement 2: Multimodal learning:
-Step 1: Run 2-metadata-extraction.py notebook to extract metadata.
-Step 2: Use the output file in step 1, to pass to notebook 2-multimodal-transformers.py and run by python <filename>.
+### Enhancement 2: Multimodal Learning
+1. Run the `2-metadata-extraction.py` notebook to extract metadata.
+2. Use the output from Step 1 as input for the `2-multimodal-learning.py` notebook and run it using the command: `python <filename>`.
 
-Enhancement 3: Ensemble learning + multimodal learning
-Go in 2-ensemble-2.py, change the data paths for training, testing, and features. We upload all data in data zip folder. For features, we note the file with FEATURES* start.
+### Enhancement 3: Ensemble Learning + Multimodal Learning
+1. Open `2-ensemble-2.py` and update the paths for training data, testing data, and feature files. All necessary data is included in the provided data ZIP file. Feature files are marked with `FEATURES*`.
